@@ -15,4 +15,6 @@ RUN mkdir -p /run/php && \
 chown -R www-data:www-data /var/www/html && \
 chown -R www-data:www-data /run/php
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
+RUN mkdir -p /webroot
+RUN echo '<?php phpinfo(); ?>' > /webroot/info.php
 EXPOSE 80 443
