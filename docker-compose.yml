@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    image: amarsingh3d/apache2.4-php7.2
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 1024M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80
